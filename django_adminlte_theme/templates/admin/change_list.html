@@ -75,7 +75,7 @@
             {{ cl.formset.non_form_errors }}
         {% endif %}
         <div class="row">
-            <div class="col-md-8 col-sm-12">
+            <div class="col-lg-10 col-md-8 col-sm-12">
                 {% block search %}{% search_form cl %}{% endblock %}
                 <div id="changelist">
                     {% block date_hierarchy %}{% date_hierarchy cl %}{% endblock %}
@@ -94,7 +94,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="col-lg-2 col-md-4 col-sm-12">
                 {% block filters %}
                     {% if cl.has_filters %}
                         <div id="changelist-filter">

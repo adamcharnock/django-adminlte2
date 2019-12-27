@@ -51,3 +51,5 @@ coverage.xml
 /.static
 /build
 /dist
+.venv
+.vscode
