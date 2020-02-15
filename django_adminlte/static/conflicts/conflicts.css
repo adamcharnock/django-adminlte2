@@ -11,3 +11,7 @@ ul.dropdown-menu li {
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.submit-row a.deletelink {
+    height: auto !important;
+}
