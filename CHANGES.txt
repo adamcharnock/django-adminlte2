@@ -4,6 +4,12 @@ This file will be added to as part of each release
 
 ----
 
+Version 0.4.2, Fri 05 Jun 2020
+===============================
+
+c8d2185bae	Adding transition_class, skin_class, and sidebar_class blocks. Closes #28 (Adam Charnock)
+
+
 Version 0.4.1, Mon 02 Jul 2018
 ===============================
 
