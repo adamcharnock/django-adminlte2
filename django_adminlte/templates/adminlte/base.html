@@ -17,7 +17,7 @@
 
     {% block extra_head %}{% endblock %}
 </head>
-<body class="hold-transition skin-blue sidebar-mini {% block body_class %}{% block bodyclass %}{% endblock %}{% endblock %}">
+<body class="{% block transition_class %}hold-transition{% endblock %} {% block skin_class %}skin-blue{% endblock %} {% block sidebar_class %}sidebar-mini{% endblock %} {% block body_class %}{% block bodyclass %}{% endblock %}{% endblock %}">
 
 {% block body %}
     <div class="wrapper">
