@@ -4,6 +4,13 @@ This file will be added to as part of each release
 
 ----
 
+Version 0.4.3, Fri 05 Jun 2020
+===============================
+
+278819682a	Bump jquery from 2.2.4 to 3.5.0 (dependabot[bot])
+258e1918bf	Update _messages.html (cresg820)
+
+
 Version 0.4.2, Fri 05 Jun 2020
 ===============================
 
