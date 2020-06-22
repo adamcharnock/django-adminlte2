@@ -18,6 +18,15 @@
             }
         </style>
     {% endif %}
+    <style>
+        #changelist-filter{
+            position: static;
+            width: 100%;
+        }
+        #content-main {
+            float: none;
+        }
+    </style>
 {% endblock %}
 
 {% block extrahead %}
@@ -65,32 +74,43 @@
             </p>
             {{ cl.formset.non_form_errors }}
         {% endif %}
-        <div class="module{% if cl.has_filters %} filtered{% endif %}" id="changelist">
-            {% block search %}{% search_form cl %}{% endblock %}
-            {% block date_hierarchy %}{% date_hierarchy cl %}{% endblock %}
-
-            {% block filters %}
-                {% if cl.has_filters %}
-                    <div id="changelist-filter">
-                        <h2>{% trans 'Filter' %}</h2>
-                        {% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
-                    </div>
-                {% endif %}
-            {% endblock %}
-
-            <form id="changelist-form" method="post"{% if cl.formset.is_multipart %}
-                  enctype="multipart/form-data"{% endif %} novalidate>{% csrf_token %}
-                {% if cl.formset %}
-                    <div>{{ cl.formset.management_form }}</div>
-                {% endif %}
-
-                {% block result_list %}
-                    {% if action_form and actions_on_top and cl.show_admin_actions %}{% admin_actions %}{% endif %}
-                    {% result_list cl %}
-                    {% if action_form and actions_on_bottom and cl.show_admin_actions %}{% admin_actions %}{% endif %}
+        <div class="row">
+            {% if cl.has_filters %}
+            <div class="col-lg-10 col-md-8 col-sm-12">
+            {% else %}
+            <div class="col-lg-12 col-md-12 col-sm-12">
+            {% endif %}
+                {% block search %}{% search_form cl %}{% endblock %}
+                <div id="changelist">
+                    {% block date_hierarchy %}{% date_hierarchy cl %}{% endblock %}
+                    <form id="changelist-form" method="post"{% if cl.formset.is_multipart %}
+                          enctype="multipart/form-data"{% endif %} novalidate>{% csrf_token %}
+                        {% if cl.formset %}
+                        
+                            <div>{{ cl.formset.management_form }}</div>
+                        {% endif %}
+                        
+                        {% block result_list %}
+                            <div class="paginator-container">
+                                {% block pagination %}{% pagination cl %}{% endblock %}
+                            </div>
+                            {% if action_form and actions_on_top and cl.show_admin_actions %}{% admin_actions %}{% endif %}
+                            {% result_list cl %}
+                            {% if action_form and actions_on_bottom and cl.show_admin_actions %}{% admin_actions %}{% endif %}
+                        {% endblock %}
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-12">
+                {% block filters %}
+                    {% if cl.has_filters %}
+                        <div id="changelist-filter">
+                            <h2>{% trans 'Filter' %}</h2>
+                            {% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
+                        </div>
+                    {% endif %}
                 {% endblock %}
-                {% block pagination %}{% pagination cl %}{% endblock %}
-            </form>
+            </div>
         </div>
     </div>
 {% endblock %}

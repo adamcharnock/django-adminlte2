@@ -7,3 +7,11 @@ this messes with our dropdown menus.
 ul.dropdown-menu li {
     list-style: none;
 }
+.paginator-container .paginator {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.submit-row a.deletelink {
+    height: auto !important;
+}
