@@ -99,6 +99,9 @@ class _Menu:
         return r
 
     def admin_apps(self, context, r):
+        if 'available_apps' not in context:
+            return r
+
         request = context['request']
         for app in context['available_apps']:
             r += '<li class="treeview"><a href="#"><i class="fa fa-circle"></i> <span>%s</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a><ul class="treeview-menu">\n' % (
