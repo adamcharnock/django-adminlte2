@@ -3,6 +3,8 @@ AdminLTE Templates, Template Tags, and Admin Theme for Django
 
 [![pypi_badge](https://badge.fury.io/py/django-adminlte2.png)](pypi.python.org/pypi/django-adminlte2)
 
+# UPDATE: See [django_adminlte4]
+
 Django AdminLTE2 provides the functionality of the AdminLTE2 theme
 to developers in the form of standard base templates. Optional styling for
 Django's built-in admin interface is also provided.
@@ -54,3 +56,4 @@ django-adminlte2 is packaged using [seed].
   [django_adminlte_x]: https://github.com/dnaextrim/django_adminlte_x
   [django-adminlte]: https://github.com/beastbikes/django-adminlte/
   [base template]: https://github.com/adamcharnock/django-adminlte2/blob/master/django_adminlte/templates/adminlte/base.html
+  [django_adminlte4]: https://github.com/adamcharnock/django-adminlte4
